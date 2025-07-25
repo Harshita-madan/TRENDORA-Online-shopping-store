@@ -1,76 +1,84 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Play, Star, Users, Package, Award } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-            {/* Animated Background Elements */}
+        <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+            {/* Subtle Background Elements */}
             <div className="absolute inset-0">
-                <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-                <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-                <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+                <div className="absolute top-20 right-20 w-64 h-64 bg-blue-50 rounded-full opacity-60"></div>
+                <div className="absolute bottom-20 left-20 w-48 h-48 bg-purple-50 rounded-full opacity-40"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full opacity-30"></div>
             </div>
             
-            {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-            
             {/* Content */}
-            <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-                <div className="space-y-8 animate-fade-in-up">
+            <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+                <div className="space-y-12">
                     {/* Badge */}
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium">
-                        <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium">
+                        <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                         New Collection Available
                     </div>
                     
                     {/* Main Heading */}
-                    <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                        Shop the
-                        <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent animate-gradient-x">
-                            Future
-                        </span>
-                        of Commerce
-                    </h1>
-                    
-                    {/* Subtitle */}
-                    <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Discover premium products with cutting-edge design. Experience shopping like never before with our curated collection.
-                    </p>
+                    <div className="space-y-6">
+                        <h1 className="text-6xl md:text-7xl font-light text-gray-900 leading-tight tracking-tight">
+                            Premium
+                            <span className="block font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                Shopping
+                            </span>
+                            Experience
+                        </h1>
+                        
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
+                            Discover carefully curated products with exceptional quality and timeless design
+                        </p>
+                    </div>
                     
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-                        <button className="group relative px-8 py-4 bg-white text-slate-900 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/25">
-                            <span className="relative z-10">Explore Products</span>
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <button className="group flex items-center px-8 py-4 bg-gray-900 text-white rounded-full font-medium transition-all duration-300 hover:bg-gray-800 hover:shadow-lg">
+                            Explore Collection
+                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                         
-                        <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold text-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                            Watch Demo
+                        <button className="flex items-center px-8 py-4 border border-gray-300 text-gray-700 rounded-full font-medium hover:border-gray-400 transition-all duration-300">
+                            <Play className="mr-2 w-4 h-4" />
+                            Watch Story
                         </button>
                     </div>
                     
                     {/* Stats */}
-                    <div className="grid grid-cols-3 gap-8 pt-16 max-w-2xl mx-auto">
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">10K+</div>
-                            <div className="text-gray-400 text-sm">Happy Customers</div>
+                    <div className="grid grid-cols-3 gap-12 pt-20 max-w-2xl mx-auto">
+                        <div className="text-center space-y-2">
+                            <div className="flex justify-center mb-3">
+                                <Users className="w-6 h-6 text-gray-400" />
+                            </div>
+                            <div className="text-3xl font-light text-gray-900">10K+</div>
+                            <div className="text-gray-500 text-sm font-medium">Happy Customers</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
-                            <div className="text-gray-400 text-sm">Premium Products</div>
+                        <div className="text-center space-y-2">
+                            <div className="flex justify-center mb-3">
+                                <Package className="w-6 h-6 text-gray-400" />
+                            </div>
+                            <div className="text-3xl font-light text-gray-900">500+</div>
+                            <div className="text-gray-500 text-sm font-medium">Premium Products</div>
                         </div>
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">99%</div>
-                            <div className="text-gray-400 text-sm">Satisfaction Rate</div>
+                        <div className="text-center space-y-2">
+                            <div className="flex justify-center mb-3">
+                                <Award className="w-6 h-6 text-gray-400" />
+                            </div>
+                            <div className="text-3xl font-light text-gray-900">99%</div>
+                            <div className="text-gray-500 text-sm font-medium">Satisfaction Rate</div>
                         </div>
                     </div>
                 </div>
             </div>
             
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                    <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                <div className="w-6 h-10 border border-gray-300 rounded-full flex justify-center">
+                    <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
                 </div>
             </div>
         </section>

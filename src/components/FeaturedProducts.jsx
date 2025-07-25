@@ -1,21 +1,22 @@
 import React from 'react';
 import Product from './Product';
 import Spinner from './Spinner';
+import { ArrowRight } from 'lucide-react';
 
 const FeaturedProducts = ({ posts, loading }) => {
     return (
-        <section className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-24 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-6">
                 {/* Section Header */}
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium mb-4">
-                        ✨ Featured Collection
+                <div className="text-center mb-20">
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm font-medium mb-6">
+                        Featured Collection
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-5xl font-light text-gray-900 mb-6 tracking-tight">
                         Trending Now
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Handpicked products that are making waves in the market
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
+                        Handpicked products that define modern lifestyle
                     </p>
                 </div>
                 
@@ -25,9 +26,9 @@ const FeaturedProducts = ({ posts, loading }) => {
                         <Spinner />
                     </div>
                 ) : posts.length > 0 ? (
-                    <div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {posts.map((post) => (
-                            <div key={post.id} className="transform hover:scale-105 transition-transform duration-300">
+                            <div key={post.id} className="group">
                                 <Product post={post} />
                             </div>
                         ))}
@@ -39,12 +40,10 @@ const FeaturedProducts = ({ posts, loading }) => {
                 )}
                 
                 {/* View All Button */}
-                <div className="text-center mt-12">
-                    <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105">
+                <div className="text-center mt-16">
+                    <button className="inline-flex items-center px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all duration-300">
                         View All Products
-                        <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                        <ArrowRight className="ml-2 w-4 h-4" />
                     </button>
                 </div>
             </div>
