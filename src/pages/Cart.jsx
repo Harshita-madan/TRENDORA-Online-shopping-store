@@ -13,11 +13,11 @@ const Cart = () => {
   }, [cart]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-r from-[#2d0036] via-[#1a0023] to-black py-10">
       {cart.length > 0 ? (
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="mb-8">
-            <h1 className="text-4xl font-light text-gray-900 mb-2">Shopping Cart</h1>
+            <h1 className="text-4xl font-light text-gray-200">Shopping Cart</h1>
             <p className="text-gray-600">{cart.length} {cart.length === 1 ? 'item' : 'items'} in your cart</p>
           </div>
 
@@ -54,7 +54,9 @@ const Cart = () => {
                 </div>
 
                 <button className="w-full bg-gray-900 text-white py-4 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300 mb-4">
-                  Proceed to Checkout
+                    <Link to="/checkout" className="block w-full h-full">
+                        Proceed to Checkout
+                    </Link>
                 </button>
                 
                 <Link to="/" className="flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors">

@@ -2,17 +2,20 @@ import React from 'react';
 import Product from './Product';
 import Spinner from './Spinner';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedProducts = ({ posts, loading }) => {
+    const navigate = useNavigate();
+
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-gradient-to-r from-[#2d0036] via-[#1a0023] to-black text-white">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-20">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 text-sm font-medium mb-6">
                         Featured Collection
                     </div>
-                    <h2 className="text-5xl font-light text-gray-900 mb-6 tracking-tight">
+                    <h2 className="text-5xl font-light text-white mb-6 tracking-tight">
                         Trending Now
                     </h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
@@ -40,8 +43,17 @@ const FeaturedProducts = ({ posts, loading }) => {
                 )}
                 
                 {/* View All Button */}
+                {/* <div className="text-center mt-16">
+                    <button 
+                    className="inline-flex items-center px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all duration-300">
+                        View All Products
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                    </button>
+                </div> */}
                 <div className="text-center mt-16">
-                    <button className="inline-flex items-center px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all duration-300">
+                    <button 
+                        onClick={() => navigate('/all-products')}
+                        className="inline-flex items-center px-8 py-4 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-800 transition-all duration-300">
                         View All Products
                         <ArrowRight className="ml-2 w-4 h-4" />
                     </button>
