@@ -15,7 +15,15 @@ const CartItem = ({item, itemIndex}) => {
     <div className="flex items-center p-6 justify-between border-b border-gray-100 last:border-b-0">
       <div className="flex flex-col md:flex-row gap-6 items-start md:items-center flex-1">
         <div className="w-24 h-24 bg-gray-50 rounded-2xl p-3 flex-shrink-0">
-          <img className="w-full h-full object-contain" src={item.image} alt={item.title} />
+          <img 
+            className="w-full h-full object-contain" 
+            src={item.image} 
+            alt={item.title}
+            onError={(e) => {
+              e.target.src = `https://via.placeholder.com/100x100/f3f4f6/9ca3af?text=${encodeURIComponent(item.category)}`;
+            }}
+            loading="lazy"
+          />
         </div>
         
         <div className="flex-1 space-y-3">

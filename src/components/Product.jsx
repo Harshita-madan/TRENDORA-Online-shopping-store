@@ -56,6 +56,10 @@ const Product = ({post}) => {
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                        e.target.src = `https://via.placeholder.com/400x400/f3f4f6/9ca3af?text=${encodeURIComponent(post.category)}`;
+                    }}
+                    loading="lazy"
                 />
             </div>
 

@@ -2,31 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Search, Filter, Grid, List } from 'lucide-react';
 import Product from '../components/Product';
 import Spinner from '../components/Spinner';
+import { products } from '../data';
 
 const AllProducts = () => {
     const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [sortBy, setSortBy] = useState('default');
     const [viewMode, setViewMode] = useState('grid');
 
-    // Fetch products
-    const fetchProductData = async () => {
-        setLoading(true);
-        try {
-            const res = await fetch("https://fakestoreapi.com/products");
-            const data = await res.json();
-            setPosts(data);
-        } catch (error) {
-            console.error("Error fetching products:", error);
-            setPosts([]);
-        }
-        setLoading(false);
-    };
-
+    // Load products from local data
     useEffect(() => {
-        fetchProductData();
+        // Simulate loading time for smooth UX
+        const timer = setTimeout(() => {
+            setPosts(products);
+            setLoading(false);
+        }, 500);
+
+        return () => clearTimeout(timer);
     }, []);
 
     // Get unique categories

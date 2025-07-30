@@ -4,28 +4,21 @@ import Spinner from '../components/Spinner';
 import Hero from '../components/Hero';
 import FeaturedProducts from '../components/FeaturedProducts';
 import Newsletter from '../components/Newsletter';
+import { products } from '../data';
 
 const Home = () => {
-    const API_URL = "https://fakestoreapi.com/products";
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([])
 
-    async function fetchProductData() {
-        setLoading(true);
-        try {
-            const res = await fetch(API_URL);
-            const data = await res.json();
-            setPosts(data);
-        }
-        catch (error) {
-            console.log("error");
-            setPosts([]);
-        }
-        setLoading(false);
-    }
-
+    // Load products from local data
     useEffect(() => {
-        fetchProductData();
+        // Simulate loading time for smooth UX
+        const timer = setTimeout(() => {
+            setPosts(products);
+            setLoading(false);
+        }, 300);
+
+        return () => clearTimeout(timer);
     }, []);
 
     return (
